@@ -1,0 +1,32 @@
+/candidateSearchChallenge
+│── /environment
+│   │── /.env
+│── /node_modules
+│── /public
+│── /src
+│   │── /api
+│   │   │── /API.tsx
+│   │── /assets
+│   │   │── /react.svg
+│   │── /components
+│   │   │── addButton.tsx
+│   │   │── Nav.tsx
+│   │   │── removeButton.tsx
+│   │   │── /interfaces
+│   │   │   │── Candidate.interface.tsx
+│   │   │── /pages
+│   │   │   │── CandidateSearch.tsx
+│   │   │   │── ErrorPage.tsx
+│   │   │   │── SavedCandidates.tsx
+│   │── App.jsx
+│   │── index.css
+│   │── main.jsx
+│   │── vite-env.d.ts
+│── .gitignore
+│── index.html
+│── package.json
+│── package-lock.json
+│── README.md
+│── tsconfig.json
+│── tsconfig.node.json
+│── vite.config.ts
