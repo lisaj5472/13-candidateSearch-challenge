@@ -1,33 +1,81 @@
-# React + TypeScript + Vite
+# Candidate Search Challenge - LJ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+This project is a **React + TypeScript** application developed as part of a coding challenge. It demonstrates core front-end concepts including **API integration**, **component-based design**, **state management**, and **localStorage**. The goal of this challenge was to build a dynamic interface that pulls data from GitHub's public API, allows users to interact with candidates, and persist selections across sessions.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Future Enhancements](#future-enhancements)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+To set up and run this project locally, follow these steps:
 
-## Expanding the ESLint configuration
+1. **Clone the repository:**
+   git clone https://github.com/lisaj5472/13-candidateSearch-challenge.git
 
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Navigate into the project directory:**
+   cd React-Challenge-LJ
 
-* Configure the top-level `parserOptions` property as follows:
+3. **Install dependencies:**
+   npm install
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+4. **Start the development server:**
+   npm start
 
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
+5. **Create a .env fie at the root of the project and add your GitHub token:**
+    VITE_GITHUB_TOKEN=your_github_token_here
 
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+6. **Start the development server:**
+    npm run dev
+
+   The application will be available at `http://localhost:5173/`.
+
+## Usage
+- Visit the Candidate Search page to view one GitHub user at a time.
+- Use the "+" button to save a candidate to your list.
+- Use the "-" button to skip to the next candidate.
+- Navigate to the Saved Candidates page to view a table of your saved profiles.
+- Remove candidates using the 🗑️ icon.
+- Data is stored in localStorage and persists across page refreshes.
+
+## Technologies Used
+- **React.js**
+- **TypeScript**
+- **Vite**
+- **HTML5 & CSS3**
+- **GitHub REST API**
+- **Node.js & npm**
+
+## Features
+- GitHub API integration with secure environment variables.
+- Candidate data rendered one profile at a time.
+- Save/remove candidate functionality with real-time UI updates.
+- Persistent state using localStorage.
+- Fully responsive and accessible UI using semantic HTML.
+
+## Future Enhancements
+- Add filtering or tagging to organize saved candidates.
+- Include loading indicators or animations.
+- Improve styling using Tailwind CSS or CSS Modules.
+- Integrate a backend database for long-term persistence.
+
+## Contributing
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+## License
+This project is licensed under the **MIT License**.
+
+## Acknowledgements
+I would like to express my gratitude to the **University of Denver Software Development Bootcamp** – for providing a strong foundation in full-stack development and for the starter code used in this project.
+
+## Contact
+For any questions or feedback, feel free to reach out:
+**GitHub: lisaj5472**
+**Email: lisaj5472@gmail.com**
