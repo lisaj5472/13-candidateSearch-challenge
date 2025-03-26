@@ -1,4 +1,4 @@
-import React from 'react';
+import { FaPlus } from "react-icons/fa";
 
 interface AddButtonProps {
   onClick: () => void;
@@ -7,7 +7,7 @@ interface AddButtonProps {
 function AddButton({ onClick }: AddButtonProps) {
   return (
     <button onClick={onClick} aria-label="Add Candidate">
-      ➕
+      <FaPlus />
     </button>
   );
 }

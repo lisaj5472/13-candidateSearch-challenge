@@ -13,8 +13,10 @@ const SavedCandidates = () => {
       }
     }, []);
 
-  function handleRemove(): void {
-    localStorage.removeItem('potentialCandidates');
+  function handleRemove(id: number): void {
+    const updatedCandidates = candidates.filter((candidate) => candidate.id !== id);
+    setCandidates(updatedCandidates);
+    localStorage.setItem('savedCandidates', JSON.stringify(updatedCandidates));
   }
    
   return (
@@ -32,22 +34,23 @@ const SavedCandidates = () => {
               <th>Email</th>
               <th>Company</th>
               <th>GitHub Profile</th>
+              <th>Remove</th>
             </tr>
           </thead>
           <tbody>
             {candidates.map((candidate) => (
               <tr key={candidate.id}>
-                <td><img src={candidate.avatar_url} alt={candidate.login} /></td>
+                <td><img className='profile-pic' src={candidate.avatar_url} alt={candidate.login} /></td>
                 <td>{candidate.name ?? candidate.login}</td>
                 <td>{candidate.location ?? 'N/A'}</td>
                 <td>{candidate.email ?? 'N/A'}</td>                
                 <td>{candidate.company ?? 'N/A'}</td>
-                <a href={candidate.html_url} target="_blank">GitHub Profile</a>
+                <td><a href={candidate.html_url} target="_blank">GitHub Profile</a></td>
+                <td><RemoveButton onClick={() => handleRemove(candidate.id)} /></td>
               </tr>
             ))}
           </tbody>
         </table>)}
-      <RemoveButton onClick={handleRemove} />
     </>
   );
 }

@@ -13,9 +13,16 @@ const CandidateSearch = () => {
   const [savedCandidates, setSavedCandidates] = useState<Candidates[]>([]);
 
   useEffect(() => {
+    console.log("useEffect is running")
     searchGithub().then((data) => {
+      console.log('searchGithub returned', data);
       const usernames = data.map((user: {login: string}) => user.login);
       Promise.all(usernames.map(searchGithubUser)).then((details) => {
+        console.log("Test key:", import.meta.env.TEST_KEY);
+        console.log('searchGithubUser details', details);
+        console.log("Raw token:", import.meta.env.VITE_GITHUB_TOKEN);
+        console.log("Token exists?", import.meta.env.VITE_GITHUB_TOKEN !== undefined);
+        console.log('VITE_GITHUB_TOKEN from Vite config:', import.meta.env.VITE_GITHUB_TOKEN);
         setCandidates(details);
       });
     });
@@ -49,7 +56,7 @@ const CandidateSearch = () => {
       <h1>Candidate Search</h1>
       <h2>{currentCandidate.name ?? currentCandidate.login}</h2>
       <div>
-        <img src={currentCandidate.avatar_url} alt={currentCandidate.login} />
+        <img className='search-pic' src={currentCandidate.avatar_url} alt={currentCandidate.login} />
         <p>Username: {currentCandidate.login}</p>
         <p>Location: {currentCandidate.location}</p>
         <p>Email: {currentCandidate.email ?? 'N/A'}</p>

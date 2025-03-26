@@ -1,4 +1,4 @@
-import React from 'react';
+import {FaMinus} from 'react-icons/fa';
 
 interface SkipButtonProps {
   onClick: () => void;
@@ -7,7 +7,7 @@ interface SkipButtonProps {
 function SkipButton({ onClick}: SkipButtonProps) {
   return (
     <button onClick={onClick} aria-label="Skip to Next Candidate">
-      "-"
+      <FaMinus />
     </button>
   );
 }

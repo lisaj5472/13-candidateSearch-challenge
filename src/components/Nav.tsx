@@ -4,10 +4,10 @@ const Nav = () => {
 
   return (
     <div>Nav
-      <nav>
+      <nav className='nav'>
       <ul>
-        <li><Link to="/">Candidate Search</Link></li>
-        <li><Link to="/SavedCandidates">Saved Candidates</Link></li>
+        <li className='nav-link'><Link to="/">Candidate Search</Link></li>
+        <li className='nav-link'><Link to="/SavedCandidates">Saved Candidates</Link></li>
       </ul>
       </nav>
     </div>
