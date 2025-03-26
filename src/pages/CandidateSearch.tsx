@@ -18,11 +18,6 @@ const CandidateSearch = () => {
       console.log('searchGithub returned', data);
       const usernames = data.map((user: {login: string}) => user.login);
       Promise.all(usernames.map(searchGithubUser)).then((details) => {
-        console.log("Test key:", import.meta.env.TEST_KEY);
-        console.log('searchGithubUser details', details);
-        console.log("Raw token:", import.meta.env.VITE_GITHUB_TOKEN);
-        console.log("Token exists?", import.meta.env.VITE_GITHUB_TOKEN !== undefined);
-        console.log('VITE_GITHUB_TOKEN from Vite config:', import.meta.env.VITE_GITHUB_TOKEN);
         setCandidates(details);
       });
     });
